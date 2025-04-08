@@ -1,0 +1,31 @@
+// 文件名：Beta81FakePlayerPlugin.java
+// 后缀：.java（Java 源代码）
+// 功能：插件入口，处理玩家加入事件和定时任务
+package com.example.fakeplayer;
+
+import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.event.Listener;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.player.PlayerJoinEvent;
+
+public class Beta81FakePlayerPlugin extends JavaPlugin implements Listener {
+    
+    @Override
+    public void onEnable() {
+        getServer().getPluginManager().registerEvents(this, this);
+        getLogger().info("Beta81FakePlayer 已启用！");
+        startFakePlayerTask();
+    }
+
+    private void startFakePlayerTask() {
+        new BukkitRunnable() {
+            @Override
+            public void run() {
+                // 每5秒生成假人
+                for (World world : Bukkit.getWorlds()) {
+                    world.spawn(new Location(world, 0, 64, 0), Player.class);
+                }
+            }
+        }.runTaskTimer(this, 0L, 20L * 5);
+    }
+}

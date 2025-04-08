@@ -1,0 +1,5 @@
+# 文件名：config.yml
+# 后缀：.yml（配置文件）
+# 功能：调整插件参数
+spawnInterval: 300 # 假人生成间隔（秒）
+maxFakePlayers: 10 # 最大假人数

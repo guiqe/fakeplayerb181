@@ -1,0 +1,8 @@
+// 文件名：ChunkLoader.java
+// 后缀：.java（工具类）
+// 功能：强制加载区块防止假人消失
+public class ChunkLoader {
+    public static void loadChunk(World world, int x, int z) {
+        world.getChunkAt(x, z).load(true); // 强制加载区块
+    }
+}

@@ -1,0 +1,7 @@
+# 文件名：plugin.yml
+# 后缀：.yml（元数据）
+name: Beta81FakePlayer
+main: com.example.fakeplayer.Beta81FakePlayerPlugin
+version: 1.0
+api-version: 1.8
+depend: [ProtocolLib] # 依赖插件（如需）

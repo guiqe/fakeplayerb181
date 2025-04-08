@@ -1,0 +1,10 @@
+// 文件名：FakePlayerEntity.java
+// 后缀：.java（实体扩展类）
+// 功能：自定义假人行为（如禁用交互）
+public class FakePlayerEntity extends Player {
+    public FakePlayerEntity(World world, String name) {
+        super(world, name);
+        setGravity(false);
+        setCustomNameVisible(false);
+    }
+}
